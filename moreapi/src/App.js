@@ -1,11 +1,16 @@
 import React from 'react'
 import './App.css'
+import { AuthProvider } from './auth'
+import Comments from './Comments'
 
 function App() {
   return (
+    <AuthProvider>
     <div className="App">
-      <h1>Context api!!</h1>
+     <Comments/>  
+    
     </div>
+    </AuthProvider>
   );
 }
 

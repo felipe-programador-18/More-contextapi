@@ -1,7 +1,6 @@
 import {useEffect, useState} from 'react'
 import firebase from './firebase'
 
-
 //here i have create one inject dependence to caught date with firebase
 export const UsedadabasePush =  endpoints => {
   const [status, setstatus] = useState('') 
@@ -19,6 +18,18 @@ export const UsedadabasePush =  endpoints => {
   return [status, save]
 }
 
+// this serve to caught all database and
 export const Usedabase = endpoints => {
     const [data, setdate] = useState({})
+    // here i am need reusing new date!!!
+   useEffect(() =>{
+    const ref = firebase.database().ref(endpoints)
+    ref.on('value', snapshoot => {
+        setdate(snapshoot.val())
+    })
+     return () => {
+         ref.off()
+     }
+   },[endpoints])
+   return data
 }

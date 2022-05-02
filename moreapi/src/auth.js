@@ -26,7 +26,7 @@ const CreateUserGet = () => {
     const CreateUser = (email, password) => {
         firebase
         .auth()
-        .createUserWithEmailAndPassword()
+        .createUserWithEmailAndPassword(email, password)
         .then( users =>{
             if(users){
              setstate({
@@ -45,3 +45,38 @@ const CreateUserGet = () => {
     return [state, CreateUser]
 }
 
+// now i have create functions to user SingInuser
+const UserSingIn = () => {
+    //theoriotical i am adding some state of createuserget
+    const [state, setstate] = useState({
+         error:'',
+         success:''
+    })
+
+    const SingUser = (email, password) => {
+        firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .catch(err => {
+            setstate({
+                ...state,
+                error: err.message
+            })
+        })
+    }
+     return [state, SingUser]
+}
+
+const Singout = () =>{
+    firebase
+    .auth()
+    .signOut()
+    .then(()=>{
+        console.log('SAIU')
+    })
+}
+
+
+export const AuthProvider = () => {
+    
+}

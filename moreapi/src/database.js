@@ -19,7 +19,7 @@ export const UsedadabasePush =  endpoints => {
 }
 
 // this serve to caught all database and
-export const Usedabase = endpoints => {
+export const Usedatabase = endpoints => {
     const [data, setdate] = useState({})
     // here i am need reusing new date!!!
    useEffect(() =>{

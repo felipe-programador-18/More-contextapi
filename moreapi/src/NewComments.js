@@ -12,4 +12,31 @@ const NewComents = () => {
       return null
     }  
     console.log(auth.users)
+
+    const {displayname} = auth.users
+    const [alterarDisplayname] = auth.users.email.split('@')
+    const CreateComments = () => {
+        if(comment !== ''){
+         save({
+             content: comment,
+             createAT: firebase.database.ServerValue.TIMESTAMP,
+             users:{
+                 id: auth.users.uid,
+                 name: displayname || alterarDisplayname
+
+             }
+         })
+         //this serve to controll of state!!
+         setcomment('')
+        }
+    }
+    return(
+        <div>
+            <textarea value={comment} onChange={evt => setcomment(evt.target.value)} /> <br/>
+            <button onClick={CreateComments}>Alterar</button>
+        </div>
+    )
 }
+
+
+export default NewComents

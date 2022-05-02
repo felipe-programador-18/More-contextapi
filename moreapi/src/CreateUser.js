@@ -28,3 +28,5 @@ const CreateUser = () => {
          <button onClick={() =>{auth.CreateUser.CreateUser(form.email, form.password)}} >Criar conta!</button>
     </>)
 }
+
+export default CreateUser

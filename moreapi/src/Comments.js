@@ -1,9 +1,10 @@
-import React  from 'react'
+import React from 'react'
 import { Usedatabase} from './database'
 import Comment from './Comment'
 
 
-const Comments = () => {
+
+const Comments = () => { 
    const data = Usedatabase('comments')
    if(!data){
        return <p>Nenhum comentário aqui</p>

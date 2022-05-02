@@ -17,3 +17,5 @@ const Comments = () => {
        return <Comment key={id} comment={data[id]} />
    })
 }
+
+export default Comments

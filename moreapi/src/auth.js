@@ -90,7 +90,8 @@ export const AuthProvider = ({children}) => {
            },
            SingUser:{
                SingState, SingUser
-           }
+           },
+           Singout
        }}>
            {children}
        </AuthContext.Provider>

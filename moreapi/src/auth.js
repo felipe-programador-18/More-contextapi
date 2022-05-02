@@ -77,6 +77,25 @@ const Singout = () =>{
 }
 
 
-export const AuthProvider = () => {
-    
+// here i am create authprovider to manegar all code
+export const AuthProvider = ({children}) => {
+   const users = UseGetUser()
+   const [CreateStateUser, CreateUser] = CreateUserGet()
+   const [SingState, SingUser] =  UserSingIn()
+   
+   return(
+       <AuthContext.Provider value={{
+           users,
+           CreateUser:{
+               CreateStateUser, CreateUser
+           },
+           SingUser:{
+               SingState, SingUser
+           }
+       }}>
+           {children}
+       </AuthContext.Provider>
+   )
+
+
 }

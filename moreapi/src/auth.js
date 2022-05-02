@@ -84,8 +84,7 @@ export const AuthProvider = ({children}) => {
    const [SingState, SingUser] =  UserSingIn()
    
    return(
-       <AuthContext.Provider value={{
-           users,
+       <AuthContext.Provider value={{users,
            CreateUser:{
                CreateStateUser, CreateUser
            },

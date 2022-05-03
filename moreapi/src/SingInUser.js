@@ -2,7 +2,6 @@ import React,{useContext, useState} from 'react'
 import { AuthContext } from './auth'
 
 //theorical when created of part of autenticatoin i need reuse some part of Createuser!!!
-
 const SingInUser = () => {
     const auth  = useContext(AuthContext)
     const [form, setform] = useState({

@@ -3,9 +3,7 @@ import { AuthContext } from './auth'
 
 
 const FormUsers = ({displayname,users}) => {
-    const auth = useContext(AuthContext)
     const [newdisplayuser, setdisplayname] = useState(displayname)
-    
     const onChange = evt => {
         setdisplayname(evt.target.value)
     }

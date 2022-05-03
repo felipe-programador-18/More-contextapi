@@ -4,6 +4,7 @@ import { AuthProvider } from './auth'
 import Comments from './Comments'
 import CreateUser from './CreateUser';
 import NewComents from './NewComments';
+import SingInUser from './SingInUser';
 import UserInfo from './UserInfo';
 
 function App() {
@@ -12,7 +13,8 @@ function App() {
     <div className="App">
      <NewComents/>
      <CreateUser/>
-     <Comments/>  
+     <Comments/>
+     <SingInUser/>  
      <UserInfo/>
     </div>
     </AuthProvider>

@@ -53,7 +53,7 @@ const UserSingIn = () => {
          success:''
     })
 
-    const SingUser = (email, password) => {
+    const SingInUser = (email, password) => {
         firebase
         .auth()
         .signInWithEmailAndPassword(email, password)
@@ -64,7 +64,7 @@ const UserSingIn = () => {
             })
         })
     }
-     return [state, SingUser]
+     return [state, SingInUser]
 }
 
 const Singout = () =>{
@@ -81,15 +81,15 @@ const Singout = () =>{
 export const AuthProvider = ({children}) => {
    const users = UseGetUser()
    const [CreateStateUser, CreateUser] = CreateUserGet()
-   const [SingInUserState, SingUser] =  UserSingIn()
+   const [SingInUserState, SingInUser] =  UserSingIn()
    
    return(
        <AuthContext.Provider value={{users,
            CreateUser:{
                CreateStateUser, CreateUser
            },
-           SingUser:{
-              SingInUserState, SingUser
+           SingInUser:{
+              SingInUserState, SingInUser
            },
            Singout
        }}>

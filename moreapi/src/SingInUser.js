@@ -30,9 +30,7 @@ const SingInUser = () => {
      
         <button onClick={()=> {auth.SingInUser.SingInUser(form.email,form.password)}} >Entrar!</button>
        
-     </>
-
-     )
+     </>)
 }
 
 export default SingInUser

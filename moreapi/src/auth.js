@@ -81,7 +81,7 @@ const Singout = () =>{
 export const AuthProvider = ({children}) => {
    const users = UseGetUser()
    const [CreateStateUser, CreateUser] = CreateUserGet()
-   const [SingState, SingUser] =  UserSingIn()
+   const [SingInUserState, SingUser] =  UserSingIn()
    
    return(
        <AuthContext.Provider value={{users,
@@ -89,7 +89,7 @@ export const AuthProvider = ({children}) => {
                CreateStateUser, CreateUser
            },
            SingUser:{
-               SingState, SingUser
+              SingInUserState, SingUser
            },
            Singout
        }}>

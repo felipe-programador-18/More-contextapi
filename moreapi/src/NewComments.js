@@ -8,7 +8,7 @@ const NewComents = () => {
     const [,save] = UsedadabasePush('comments')
     const [comment, setcomment] = useState('')
     const auth = useContext(AuthContext)
-    if(auth.users !== null){
+    if(auth.users === null){
       return null
     }  
     console.log(auth.users)

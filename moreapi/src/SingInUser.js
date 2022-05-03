@@ -21,8 +21,19 @@ const SingInUser = () => {
         return null
     }
      return( <>
+       <h2>Entrar na sua Conta:</h2>
+       {
+           auth.SingInUser.SingState.error !== '' && 
+           <p>{ auth.SingInUser.SingState.error}</p>
+       }
+       <input type='text'  placeholder='Email:' value={form.email} Onchange={Onchange('email') }  />
+       <input type='password' placeholder='Senha:' value={form.password} onChange={Onchange('password')} />
      
+        <button onChange={()=> {auth.SingInUser.SingInUser(form.email,form.password)}} >Entrar!</button>
+       
      </>
 
      )
 }
+
+export default SingInUser
